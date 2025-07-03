@@ -24,9 +24,6 @@ This Python program enables the transformation of text files into DNA sequences 
 - **Command-Line Interface**  
   Simple command-line arguments for encoding (`-e`) and decoding (`-d`).
 
-- **Interactive Outputs**  
-  The program can prompt users to display intermediate outputs, aiding learning and debugging.
-
 ---
 
 ## How It Works
@@ -37,13 +34,13 @@ This Python program enables the transformation of text files into DNA sequences 
 2. Converts text to binary, then maps binary to DNA bases (A, T, C, G).
 3. Represents DNA bases as matrices for further encoding.
 4. Applies generator matrix multiplication to produce codewords.
-5. Inserts specific patterns into DNA to help correct indel errors.
+5. Inserts specific patterns into DNA to help correct deletion errors.
 6. Writes the DNA-encoded output to a file.
 
 ### Decoding
 
 1. Reads DNA-encoded input file.
-2. Detects and corrects indel errors.
+2. Detects and corrects deletion errors.
 3. Uses syndrome decoding with coset leaders to fix substitution errors.
 4. Converts corrected DNA back to binary and then to the original text.
 5. Writes the recovered text to a file.
@@ -73,26 +70,13 @@ This will recover the original text as `Retrieved_DNA_Encoded_input.txt`.
 ## Strengths
 
 - **Robust Error Correction**  
-  Effective against both indel and substitution errors, which are crucial for practical DNA storage.
+  Effective against both deletion and substitution errors, which are crucial for practical DNA storage.
 
 - **Modular and Extensible**  
   Code structure allows for modifications, such as using different generator matrices or error correction strategies.
 
 - **Educational**  
   Clearly demonstrates text-to-binary, binary-to-DNA, and matrix-based error correction processes.
-
----
-
-## Limitations
-
-- **Manual Prompts**  
-  Frequent `input()` statements may hinder batch automation.
-
-- **Limited Exception Handling**  
-  Some parts of the code may lack detailed error handling for I/O or edge cases.
-
-- **Complexity**  
-  Some functions are nested and could be refactored for improved readability.
 
 ---
 

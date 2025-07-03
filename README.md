@@ -88,9 +88,9 @@ This will recover the original text as `Retrieved_DNA_Encoded_input.txt`.
 
 ---
 
-## License
+## License and Copyright
 
-This project is released under the MIT License.
+Copyright © W.-H. Choi. All rights reserved.
 
 ---
 

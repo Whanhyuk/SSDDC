@@ -1,6 +1,6 @@
 # DNA-Based Data Encoding and Decoding System
 
-This project implements an encoding and decoding system for digital data storage in DNA sequences, featuring robust error correction for insertion, deletion, and substitution errors. The system is based on custom generator matrices and syndrome decoding.
+This project implements an encoding and decoding system for digital data storage in DNA sequences, featuring robust error correction for single-deletion errors. 
 
 ---
 
@@ -19,7 +19,7 @@ This Python program enables the transformation of text files into DNA sequences 
   Utilizes generator matrices to encode data blocks, enabling linear block codes and error correction.
 
 - **Error Correction**  
-  Handles both substitution and indel (insertion/deletion) errors with syndrome decoding and coset leaders.
+  Correct the single-deletion error occurring in each codeword.
 
 - **Command-Line Interface**  
   Simple command-line arguments for encoding (`-e`) and decoding (`-d`).
@@ -41,9 +41,8 @@ This Python program enables the transformation of text files into DNA sequences 
 
 1. Reads DNA-encoded input file.
 2. Detects and corrects deletion errors.
-3. Uses syndrome decoding with coset leaders to fix substitution errors.
-4. Converts corrected DNA back to binary and then to the original text.
-5. Writes the recovered text to a file.
+3. Converts corrected DNA back to binary and then to the original text.
+4. Writes the recovered text to a file.
 
 ---
 
@@ -64,19 +63,6 @@ python final_version_pub.py -d DNA_Encoded_input.txt
 ```
 
 This will recover the original text as `Retrieved_DNA_Encoded_input.txt`.
-
----
-
-## Strengths
-
-- **Robust Error Correction**  
-  Effective against both deletion and substitution errors, which are crucial for practical DNA storage.
-
-- **Modular and Extensible**  
-  Code structure allows for modifications, such as using different generator matrices or error correction strategies.
-
-- **Educational**  
-  Clearly demonstrates text-to-binary, binary-to-DNA, and matrix-based error correction processes.
 
 ---
 
